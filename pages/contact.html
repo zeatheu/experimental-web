@@ -1,0 +1,95 @@
+<style>
+    /* Add specific styles for contact form */
+    .contact-container {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 2rem;
+    }
+    
+    .contact-form, .contact-info {
+        flex: 1;
+        min-width: 300px; /* Prevent excessive squeezing */
+    }
+    
+    .contact-form form label {
+        display: block;
+        margin-bottom: 0.5rem;
+        font-weight: bold;
+    }
+    
+    .contact-form form input[type="text"],
+    .contact-form form input[type="email"],
+    .contact-form form textarea {
+        width: 100%;
+        padding: 0.8rem;
+        margin-bottom: 1rem;
+        border: 1px solid var(--border-color);
+        border-radius: 4px;
+        font-family: var(--body-font);
+        font-size: 1rem;
+    }
+    
+    .contact-form form textarea {
+        min-height: 150px;
+        resize: vertical;
+    }
+    
+    .contact-info p {
+        margin-bottom: 1rem;
+    }
+    
+    .contact-info strong {
+         color: var(--heading-color);
+    }
+    
+    </style>
+    
+    <section class="contact-intro content-section">
+        <div class="container">
+            <h2>Get In Touch</h2>
+            <p>We'd love to hear from you! Whether you're a potential customer, investor, partner, or just curious about our technology, feel free to reach out.</p>
+        </div>
+    </section>
+    
+    <section class="contact-details">
+        <div class="container contact-container">
+            <div class="contact-form">
+                <h3>Send Us a Message</h3>
+                <form id="contact-form">
+                    <label for="name">Name:</label>
+                    <input type="text" id="name" name="name" required>
+    
+                    <label for="email">Email:</label>
+                    <input type="email" id="email" name="email" required>
+    
+                    <label for="subject">Subject:</label>
+                    <input type="text" id="subject" name="subject">
+    
+                    <label for="message">Message:</label>
+                    <textarea id="message" name="message" required></textarea>
+    
+                    <button type="submit" class="btn">Send Message</button>
+                     <p style="font-size: 0.8rem; margin-top: 1rem; font-style: italic;">(Note: This form is currently a placeholder and does not send emails.)</p>
+                </form>
+            </div>
+            <div class="contact-info">
+                <h3>Contact Information</h3>
+                 <div class="placeholder-img" style="height: 180px; margin-bottom: 1.5rem;">Placeholder: Simple Map or Abstract Location Graphic</div>
+                <p>
+                    <strong>Aether Dynamics HQ (Placeholder Address):</strong><br>
+                    123 Innovation Drive<br>
+                    Tech City, CA 94000<br>
+                    United States
+                </p>
+                <p>
+                    <strong>Email:</strong> <a href="mailto:info@aetherdynamics.placeholder">info@aetherdynamics.placeholder</a> (Investor inquiries: <a href="mailto:investors@aetherdynamics.placeholder">investors@aetherdynamics.placeholder</a>)
+                </p>
+                <p>
+                    <strong>Phone:</strong> +1 (555) 123-4567 (Placeholder)
+                </p>
+                 <p>
+                    <strong>Operating Hours:</strong> Mon-Fri, 9:00 AM - 5:00 PM (PST)
+                 </p>
+            </div>
+        </div>
+    </section>

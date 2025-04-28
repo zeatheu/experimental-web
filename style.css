@@ -1,0 +1,280 @@
+/* --- Basic Reset & Root Variables --- */
+:root {
+    /* COLOR PALETTE - Choose your colors here! */
+    --primary-color: #0D47A1; /* Deep Blue */
+    --secondary-color: #1976D2; /* Medium Blue */
+    --accent-color: #4FC3F7; /* Light Blue / Cyan */
+    --background-color: #f4f7f9; /* Light Gray */
+    --text-color: #333; /* Dark Gray */
+    --heading-color: #1a1a1a; /* Near Black */
+    --white-color: #ffffff;
+    --border-color: #e0e0e0;
+
+    /* FONTS */
+    --heading-font: 'Orbitron', sans-serif; /* Futuristic font */
+    --body-font: 'Roboto', sans-serif; /* Clean sans-serif */
+
+    /* TRANSITIONS */
+    --transition-speed: 0.3s;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: var(--body-font);
+    line-height: 1.6;
+    background-color: var(--background-color);
+    color: var(--text-color);
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: var(--heading-font);
+    color: var(--heading-color);
+    margin-bottom: 1rem;
+}
+
+a {
+    color: var(--primary-color);
+    text-decoration: none;
+    transition: color var(--transition-speed) ease;
+}
+
+a:hover {
+    color: var(--accent-color);
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
+
+/* --- Header --- */
+header {
+    background-color: var(--white-color);
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    padding: 1rem 0;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    width: 100%;
+}
+
+.header-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    font-family: var(--heading-font);
+    font-size: 1.8rem;
+    font-weight: bold;
+    color: var(--primary-color);
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+}
+
+nav ul li {
+    margin-left: 2rem;
+}
+
+nav ul li a {
+    font-weight: 400;
+    padding: 0.5rem 0;
+    position: relative;
+    color: var(--text-color);
+}
+
+nav ul li a::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 2px;
+    bottom: 0;
+    left: 0;
+    background-color: var(--accent-color);
+    transition: width var(--transition-speed) ease;
+}
+
+nav ul li a:hover::after,
+nav ul li a.active::after {
+    width: 100%;
+}
+
+.menu-toggle {
+    display: none; /* Hidden by default, shown on mobile */
+    background: none;
+    border: none;
+    font-size: 2rem;
+    cursor: pointer;
+    color: var(--primary-color);
+}
+
+/* --- Main Content Area --- */
+main {
+    flex-grow: 1; /* Ensures main content takes available space */
+    padding: 2rem 0;
+}
+
+#page-content {
+    /* Styles for loaded content sections */
+    background-color: var(--white-color);
+    padding: 2rem;
+    border-radius: 8px;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+    min-height: 400px; /* Ensure some height while loading */
+}
+
+/* Basic section styling (apply within content pages) */
+.content-section {
+    margin-bottom: 2rem;
+    padding-bottom: 1rem;
+    border-bottom: 1px solid var(--border-color);
+}
+.content-section:last-child {
+    border-bottom: none;
+    margin-bottom: 0;
+}
+
+/* --- Footer --- */
+footer {
+    background-color: var(--heading-color);
+    color: var(--background-color);
+    text-align: center;
+    padding: 1.5rem 0;
+    margin-top: auto; /* Pushes footer to the bottom */
+}
+
+footer p {
+    font-size: 0.9rem;
+}
+
+/* --- Basic Button Style --- */
+.btn {
+    display: inline-block;
+    background-color: var(--primary-color);
+    color: var(--white-color);
+    padding: 0.8rem 1.5rem;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-family: var(--body-font);
+    font-weight: bold;
+    text-align: center;
+    transition: background-color var(--transition-speed) ease, transform var(--transition-speed) ease;
+}
+
+.btn:hover {
+    background-color: var(--secondary-color);
+    transform: translateY(-2px);
+    color: var(--white-color); /* Ensure text color remains on hover */
+}
+
+.btn-secondary {
+    background-color: var(--accent-color);
+    color: var(--heading-color);
+}
+
+.btn-secondary:hover {
+    background-color: var(--secondary-color);
+    color: var(--white-color);
+}
+
+/* --- Placeholder Image Style --- */
+.placeholder-img {
+    background-color: #ccc;
+    color: #666;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    font-style: italic;
+    width: 100%;
+    aspect-ratio: 16 / 9; /* Common aspect ratio */
+    border-radius: 4px;
+    margin-bottom: 1rem;
+    font-size: 0.9rem;
+}
+
+
+/* --- Responsive Design --- */
+@media (max-width: 768px) {
+    .header-content {
+        flex-wrap: wrap;
+    }
+
+    nav {
+        width: 100%;
+        max-height: 0; /* Hidden by default */
+        overflow: hidden;
+        transition: max-height var(--transition-speed) ease-out;
+        order: 3; /* Place nav below logo and toggle */
+        background-color: var(--white-color); /* Background for mobile nav */
+    }
+
+    nav.active {
+        max-height: 500px; /* Arbitrary large height */
+        padding-bottom: 1rem; /* Space below links */
+    }
+
+    nav ul {
+        flex-direction: column;
+        align-items: center;
+        padding-top: 1rem;
+    }
+
+    nav ul li {
+        margin: 0.5rem 0;
+        width: 100%;
+        text-align: center;
+    }
+
+     nav ul li a {
+        display: block; /* Make links full width */
+        padding: 0.8rem 0;
+    }
+     nav ul li a::after {
+        /* Optional: adjust underline for mobile */
+        left: 50%;
+        transform: translateX(-50%);
+        height: 1px;
+     }
+
+    .menu-toggle {
+        display: block; /* Show hamburger icon */
+        order: 2; /* Place it after the logo */
+    }
+
+    #page-content {
+        padding: 1rem;
+    }
+
+    .product-grid {
+        grid-template-columns: 1fr; /* Stack products */
+    }
+
+    .contact-form, .contact-info {
+        flex-basis: 100%; /* Stack contact sections */
+        margin-bottom: 2rem;
+    }
+    .contact-container{
+        flex-direction: column;
+    }
+}

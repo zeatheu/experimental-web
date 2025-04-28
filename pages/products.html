@@ -1,0 +1,96 @@
+<style>
+    /* Add specific styles for product grid */
+    .product-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+        gap: 2rem;
+        margin-top: 2rem;
+    }
+    
+    .product-card {
+        background-color: #fff;
+        border: 1px solid var(--border-color);
+        border-radius: 8px;
+        padding: 1.5rem;
+        text-align: center;
+        box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+        transition: transform var(--transition-speed) ease, box-shadow var(--transition-speed) ease;
+    }
+    
+    .product-card:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    }
+    
+    .product-card h3 {
+        margin-top: 1rem;
+        margin-bottom: 0.5rem;
+        font-size: 1.3rem;
+    }
+    
+    .product-card p {
+        font-size: 0.95rem;
+        margin-bottom: 1rem;
+        min-height: 60px; /* Ensure cards align better */
+    }
+    
+    .product-card .btn {
+        width: 100%;
+    }
+    .coming-soon-tag {
+        font-style: italic;
+        color: var(--secondary-color);
+        font-weight: bold;
+        margin-top: 1rem;
+    }
+    
+    </style>
+    
+    <section class="products-intro content-section">
+        <div class="container">
+            <h2>Our Innovative Products</h2>
+            <p>Explore our range of affordable, high-performance drones and robots designed for various applications. Direct sales coming soon!</p>
+        </div>
+    </section>
+    
+    <section class="product-display">
+        <div class="container">
+            <div class="product-grid">
+                <div class="product-card">
+                     <div class="placeholder-img" style="aspect-ratio: 4/3;">Placeholder: Commercial Drone Image</div>
+                    <h3>Aether Scout Drone</h3>
+                    <p>Versatile aerial platform for photography, surveying, and inspection. High stability and extended flight time.</p>
+                    <button class="btn btn-add-to-cart">Pre-order / Learn More</button>
+                </div>
+    
+                <div class="product-card">
+                    <div class="placeholder-img" style="aspect-ratio: 4/3;">Placeholder: Delivery Drone Image</div>
+                    <h3>Aether Carrier Drone</h3>
+                    <p>Autonomous delivery drone for efficient and secure last-mile logistics. Payload capacity: TBD.</p>
+                     <button class="btn btn-add-to-cart">Pre-order / Learn More</button>
+                </div>
+    
+                <div class="product-card">
+                     <div class="placeholder-img" style="aspect-ratio: 4/3;">Placeholder: Delivery Robot Image</div>
+                    <h3>Aether Rover Bot</h3>
+                    <p>Ground-based autonomous robot for local deliveries and campus logistics. Navigates sidewalks safely.</p>
+                    <button class="btn btn-add-to-cart">Pre-order / Learn More</button>
+                </div>
+    
+                <div class="product-card">
+                    <div class="placeholder-img" style="aspect-ratio: 4/3;">Placeholder: AI Robot Image</div>
+                    <h3>Aether Companion AI</h3>
+                    <p>Intelligent robotic assistant for tasks, learning, and interaction. Features advanced AI capabilities.</p>
+                    <button class="btn btn-add-to-cart">Pre-order / Learn More</button>
+                </div>
+    
+                 <div class="product-card">
+                     <div class="placeholder-img" style="aspect-ratio: 4/3;">Placeholder: Futuristic Humanoid Sketch</div>
+                    <h3>Aether Nexus Humanoid</h3>
+                     <p>Our next frontier: An affordable, versatile humanoid robot for complex tasks and human interaction.</p>
+                    <p class="coming-soon-tag">Coming Soon</p>
+                    </div>
+    
+                </div>
+        </div>
+    </section>
